@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Docker image scan'){
             steps{
-                 sh "trivy image --format table -o trivy-image-report.html manojkrishnappa/puneethrajkumar:1"
+                 sh "trivy image --format table -o trivy-image-report.html kiranbs26/puneethrajkumar:1"
             }
         }
 
