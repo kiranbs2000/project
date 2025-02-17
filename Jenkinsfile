@@ -28,7 +28,7 @@ pipeline {
 
         stage('Containersation'){
             steps{
-                sh ''' docker run -it -d --name c1 -p 9001:8080 kiranbs26/puneethrajkumar:1 '''
+                sh ''' docker run -it -d -p 9001:8080 kiranbs26/puneethrajkumar:1 '''
             }
         }
 
