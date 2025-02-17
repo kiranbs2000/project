@@ -25,19 +25,10 @@ pipeline {
                 sh "docker build -t kiranbs26/puneethrajkumar:1 ."
             }
         }
-        stage('Docker image scan'){
-            steps{
-                 sh "trivy image --format table -o trivy-image-report.html kiranbs26/puneethrajkumar:1"
-            }
-        }
 
         stage('Containersation'){
             steps{
-                sh '''
-                    docker stop  c1
-                    docker rm c1 
-                    docker run -it -d --name c1 -p 9001:8080 kiranbs26/puneethrajkumar:1
-                '''
+                sh ''' docker run -it -d --name c1 -p 9001:8080 kiranbs26/puneethrajkumar:1 '''
             }
         }
 
