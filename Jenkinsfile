@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage('git checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/ManojKRISHNAPPA/test-1.git'
+                git branch: 'main', url: 'https://github.com/kiranbs2000/project.git'
             }
         }
         stage('compile'){
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Build and Tag Docker file'){
             steps{
-                sh "docker build -t manojkrishnappa/puneethrajkumar:1 ."
+                sh "docker build -t kiranbs26/puneethrajkumar:1 ."
             }
         }
         stage('Docker image scan'){
@@ -36,7 +36,7 @@ pipeline {
                 sh '''
                     docker stop  c1
                     docker rm c1 
-                    docker run -it -d --name c1 -p 9001:8080 manojkrishnappa/puneethrajkumar:1
+                    docker run -it -d --name c1 -p 9001:8080 kiranbs26/puneethrajkumar:1
                 '''
             }
         }
@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Pushing image to repository'){
             steps{
-                sh 'docker push manojkrishnappa/puneethrajkumar:1'
+                sh 'docker push kiranbs26/puneethrajkumar:1'
             }
         }
     }
