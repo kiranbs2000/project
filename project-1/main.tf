@@ -12,6 +12,6 @@ resource "aws_instance" "instance" {
     delete_on_termination = "true"
   }
   tags = {
-    Name = "terrsform-server"
+    Name = "tf-server"
   }
 }
