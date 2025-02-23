@@ -7,7 +7,7 @@ resource "aws_instance" "instance" {
   security_groups = ["linux-sg"]
   key_name = "my-ec2-keypair"
   root_block_device {
-    volume_size = 20
+    volume_size = 8
     volume_type = "gp2"
     delete_on_termination = "true"
   }
